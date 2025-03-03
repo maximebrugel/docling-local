@@ -21,20 +21,29 @@ uv pip install -e ".[dev]"
 
 ### Generate AI-friendly document from PDF
 
-To convert a PDF to an AI-friendly document and save it to a file:
+To convert a PDF to an AI-friendly document and save it to a file, you can use one of the following methods:
+
+#### Using the Makefile (Recommended)
+
+```bash
+# Convert a PDF (local file or URL) to markdown
+make generate input_path=input/paper_test.pdf output_path=output/paper_test.md
+
+# Convert from a URL
+make generate input_path=https://arxiv.org/pdf/2408.09869 output_path=output/document.md
+```
+
+#### Using Python directly
 
 ```bash
 # Activate virtual environment
 source .venv/bin/activate
 
 # Using the module directly
+python -m docling_local.generate input/paper_test.pdf output/paper_test.md
+
+# Using a URL as input
 python -m docling_local.generate https://arxiv.org/pdf/2408.09869 output/document.md
-
-# Or using the CLI command (after installing the package)
-docling-generate https://arxiv.org/pdf/2408.09869 output/document.md
-
-# Or convert a local PDF file
-docling-generate /path/to/your/document.pdf output/document.md
 ```
 
 ## Development
