@@ -12,7 +12,9 @@ license = {text = "MIT"}
 authors = [
     {name = "Maxime Brugel"}
 ]
-dependencies = []
+dependencies = [
+    "docling>=2.25.1",
+]
 
 [project.optional-dependencies]
 dev = [
@@ -24,6 +26,9 @@ dev = [
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/docling_local"]
+
+[project.scripts]
+docling-generate = "docling_local.generate:main"
 
 [tool.black]
 line-length = 88
