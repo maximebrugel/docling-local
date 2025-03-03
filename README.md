@@ -46,6 +46,14 @@ python -m docling_local.generate input/paper_test.pdf output/paper_test.md
 python -m docling_local.generate https://arxiv.org/pdf/2408.09869 output/document.md
 ```
 
+#### Using UV (Alternative)
+
+If you prefer using UV run for isolated script execution (Note: This may require additional setup for dependencies):
+
+```bash
+uv run python -m docling_local.generate input/paper_test.pdf output/paper_test.md
+```
+
 ## Development
 
 ```bash
